@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"
+        description="Responsive Redesign" />
+    <title>Responsive Redesign</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    body {
+        font-family: "Gill Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 17px;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    img {
+        z-index: 1;
+    }
+
+    h1 {
+        font-size: 27px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 1.4em;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 44;
+        font-style: italic;
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 44;
+        font-style: bold;
+        text-align: center;
+    }
+
+    .image-grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .image-grid .image-item {
+        display: flex;
+        flex-flow: column;
+        max-width: 20%;
+        min-width: 300px;
+        margin: 10px;
+    }
+
+    .image-grid .persona {
+        max-width: 45%;
+    }
+
+    .image-grid .image-item img {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .image-grid img {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+
+    .image-grid .overview {
+        max-width: 80%;
+        min-width: 300px;
+        width: auto;
+        height: auto;
+    }
+
+    .image-item .overview img {
+        transition: transform 0.3s ease;
+    }
+
+    .image-item img:hover {
+        transform: scale(1.05);
+    }
+
+    .image-grid.overview img:hover {
+        transform: scale(1.15);
+    }
+
+    .nav a img {
+        display: block;
+        width: auto;
+        height: 17px;
+    }
+
+    .nav {
+        overflow: hidden;
+        background-color: #F28202;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .nav a {
+        float: left;
+        display: block;
+        color: #111111;
+        text-align: center;
+        padding: 14px 16px;
+        margin: 5px;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .nav a.active {
+        background-color: #111111;
+        color: white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav a:active {
+        transform: translateY(2px);
+    }
+
+    .nav a:hover {
+        text-decoration: underline;
+        outline-color: #111111;
+        outline-width: 2px;
+        outline-style: solid;
+    }
+
+    .nav .menu-bar {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 500px) {
+
+        /* Optionally, animate the container’s height if you want a dropdown effect */
+        .nav {
+            max-height: 60px;
+            /* Adjust to your default height */
+            transition: max-height 1s ease, opacity 0.5s ease;
+        }
+
+        .nav a {
+            float: none;
+        }
+
+        .nav a.menu-bar {
+            float: right;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* When the menu is clicked, show the links */
+        .nav.menu-clicked {
+            max-height: 300px;
+            /* Adjust so that all links are visible */
+        }
+
+        .nav.menu-clicked a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Instead of hiding via display, hide with opacity and transform */
+        .nav a:not(.always-visible) {
+            opacity: 0;
+            float: none;
+            display: block;
+            text-align: left;
+            pointer-events: none;
+            /* Prevent accidental clicks while hidden */
+            transition: max-height 1s ease, opacity 0.5s ease;
+        }
+
+        .nav.menu-clicked a:not(.always-visible) {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+</style>
+
+<body>
+    <div class="nav" id="nav-bar">
+        <a href="index.html" class="active">Overview</a>
+        <a href="visual.html">Visual Redesign</a>
+        <a href="mockups.html">Mockups</a>
+        <a href="javascript:void(0);" class="menu-bar always-visible" onclick="myFunction()">&#9776;</a>
+    </div>
+    <div class="content">
+        <h1>Project Overview</h1>
+        <p>
+            Have you ever ordered food online and found the website difficult to navigate?
+            That was the experience I had when I tried ordered from Heng Thai and Rotisserie (or Heng for short).
+            I chose to analyze and redesign the Heng Thai and Rotisserie website
+            because it is my favorite restaurant and I believe that their website can be improved.
+        </p>
+        <p>Below is a screenshot of the Heng Thai and Rotiserrie's home page (<a
+                href="https://www.hengpvd.com/home">https://www.hengpvd.com/home</a>).</p>
+    </div>
+    <div class="image-grid">
+        <div class="image-item overview">
+            <img src="img/heng.jpg" alt="Diagram of microwave on the 4th floor of the CIT"
+                aria-label="Diagram of microwave on the 4th floor of the CIT">
+        </div>
+        <script src="nav-bar.js"></script>
+</body>
+
+</html>
