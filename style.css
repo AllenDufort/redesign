@@ -2,6 +2,12 @@
     font-family: "Gill Sans", sans-serif;
 }
 
+h1 {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: #f28202;
+}
 a.nav-link {
     color: #000;
     padding: 8px;
@@ -29,7 +35,6 @@ a.nav-link {
 img {
     transition: transform 0.3s; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 0px;
 }
 img:hover {
     transform: scale(1.05);
@@ -37,15 +42,4 @@ img:hover {
 /* Remove hover effect for images with class 'd-hover' */
 img.d-block:hover {
     transform: none; /* No scaling on hover */
-}
-
-.carousel {
-    /* width: 80%; */
-    margin: 1rem auto;
-}
-.carousel-item img {
-    width: 100%; 
-    height:  60vh;
-    min-height: 400px;
-    object-fit: cover;
 }
