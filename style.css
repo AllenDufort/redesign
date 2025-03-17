@@ -39,7 +39,6 @@ img {
 img:hover {
     transform: scale(1.05);
 }
-/* Remove hover effect for images with class 'd-hover' */
 img.d-block:hover {
-    transform: none; /* No scaling on hover */
+    transform: none;
 }
