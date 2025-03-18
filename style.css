@@ -42,3 +42,17 @@ img:hover {
 img.d-block:hover {
     transform: none;
 }
+
+body {
+    font-size: 20px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+}
+
+.container:not(.designs) {
+    width: 50% !important;
+    min-width: 400px;
+    margin: 0 auto;
+}
