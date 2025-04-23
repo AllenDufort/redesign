@@ -4,7 +4,6 @@
 
 h1 {
     font-weight: bold;
-    text-align: center;
     text-decoration: underline;
     color: #f28202;
 }
@@ -52,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container:not(.designs) {
-    width: 50% !important;
+    width: 60% !important;
     min-width: 400px;
     margin: 0 auto;
 }
